@@ -16,7 +16,7 @@ server.use('/api/users', authenticator, usersRouter);
 server.use('/api/auth', authRouter);
 
 server.get('/', (req, res) => {
-    res.status(200).json({ api: 'up' });
+    res.status(200).json({ message: 'up' });
 });
 
 module.exports = server;

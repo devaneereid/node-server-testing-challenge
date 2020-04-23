@@ -18,7 +18,7 @@ router.post('/register', (req, res) => {
             res.status(201).json(saved);
         })
         .catch(error => {
-            console.log(error);
+            // console.log(error);
             res.status(500).json({ errorMessage: error.message });
         });
 });
@@ -32,7 +32,7 @@ router.post('/login', (req, res) => {
             if (user && bcrypt.compareSync(password, user.password)) {
                 const token = generateToken(user);
 
-                res.status(200).json({ message: `Welcome ${user.username}!`, token });
+                res.status(200).json({ message: 'Welcome!', token });
             } else {
                 res.status(401).json({ message: 'You shall not pass!' });
             }
